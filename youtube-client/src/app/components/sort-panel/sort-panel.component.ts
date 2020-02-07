@@ -9,7 +9,7 @@ export class SortPanelComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
   }
 
 }
