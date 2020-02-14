@@ -1,0 +1,35 @@
+.card {
+  width: 200px;
+  padding: 20px;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statistics > div {
+  display: flex;
+  align-items: center;
+}
+
+.statistics > div > mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.statistics > div > p {
+  font-size: 12px;
+}
+
+.video-name {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.more-btn {
+  display: flex;
+  justify-content: center;
+}
