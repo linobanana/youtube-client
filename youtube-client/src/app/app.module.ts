@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule, MatInputModule, MatButtonModule, MatCardModule } from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchFieldComponent } from './components/header/search-field/search-field.component';
+import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchFieldComponent } from './components/header/search-field/search-fi
     SearchFieldComponent,
     SortPanelComponent,
     SearchResultsComponent,
-    SearchItemComponent
+    SearchItemComponent,
+    NumberConversionPipe
   ],
   imports: [
     BrowserModule,

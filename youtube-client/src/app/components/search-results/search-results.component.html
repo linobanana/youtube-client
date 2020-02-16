@@ -1,14 +1,5 @@
 <div class="wrapper">
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
-  <app-search-item></app-search-item>
+  <app-search-item *ngFor="let video of videos"
+    [video]="video"
+  ></app-search-item>
 </div>
