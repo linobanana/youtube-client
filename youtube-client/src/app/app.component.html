@@ -1,3 +1,3 @@
-<app-header></app-header>
-<app-sort-panel></app-sort-panel>
-<app-search-results></app-search-results>
+<app-header (showResults)="showResults()" (showPanel)="showPanel($event)"></app-header>
+<app-sort-panel *ngIf="sortActive"></app-sort-panel>
+<app-search-results *ngIf="hasResponse"></app-search-results>

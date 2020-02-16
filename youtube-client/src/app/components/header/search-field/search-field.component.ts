@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-field',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-field.component.css']
 })
 export class SearchFieldComponent implements OnInit {
+  @Output() public submit = new EventEmitter<boolean>();
 
   constructor() { }
 
   public ngOnInit(): void {
+  }
+
+  public submitForm(action: boolean): void {
+    event.preventDefault();
+    this.submit.emit(action);
   }
 
 }

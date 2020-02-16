@@ -1,6 +1,6 @@
 import { youtubeResponse } from './../../mocks/youtube-response';
 import { SearchItem } from './../../models/search-item.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 const videos: SearchItem[] = youtubeResponse.items;
 
@@ -10,6 +10,7 @@ const videos: SearchItem[] = youtubeResponse.items;
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
+
   public videos: SearchItem[];
 
   constructor() { }

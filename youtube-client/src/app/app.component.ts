@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title: string = 'youtube-client';
+  public sortActive: boolean = false;
+  public hasResponse: boolean = false;
+
+  public showResults(): void {
+    this.hasResponse = true;
+  }
+
+  public showPanel(isActive: boolean): void {
+    isActive ? this.sortActive = true : this.sortActive = false;
+  }
 }
