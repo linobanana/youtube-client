@@ -10,6 +10,7 @@ import { MatIconModule, MatInputModule, MatButtonModule, MatCardModule } from '@
 import { HeaderComponent } from './components/header/header.component';
 import { SearchFieldComponent } from './components/header/search-field/search-field.component';
 import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
+import { BorderColorDirective } from './directives/border-color.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
     SortPanelComponent,
     SearchResultsComponent,
     SearchItemComponent,
-    NumberConversionPipe
+    NumberConversionPipe,
+    BorderColorDirective
   ],
   imports: [
     BrowserModule,
