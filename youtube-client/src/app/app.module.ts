@@ -11,6 +11,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchFieldComponent } from './components/header/search-field/search-field.component';
 import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
 import { BorderColorDirective } from './directives/border-color.directive';
+import { DateSortPipe } from './pipes/date-sort.pipe';
+import { CountOfViewsPipe } from './pipes/count-of-views.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { BorderColorDirective } from './directives/border-color.directive';
     SearchResultsComponent,
     SearchItemComponent,
     NumberConversionPipe,
-    BorderColorDirective
+    BorderColorDirective,
+    DateSortPipe,
+    CountOfViewsPipe
   ],
   imports: [
     BrowserModule,

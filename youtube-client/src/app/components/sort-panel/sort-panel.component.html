@@ -1,8 +1,8 @@
 <div class="container">
   <div class="wrapper">
     <p>Sorting by:</p>
-    <p><a href="#">date</a></p>
-    <p><a href="#">count of views</a></p>
+    <p class="field"><a href="" (click)="dateSort($event)">date</a><mat-icon *ngIf="dateSortCounter > 0">{{ dateSortCounter % 2 === 0 ? 'arrow_downward' : 'arrow_upward' }}</mat-icon></p>
+    <p class="field"><a href="" (click)="countSort($event)">count of views</a><mat-icon *ngIf="countSortCounter > 0">{{ countSortCounter % 2 === 0 ? 'arrow_upward' : 'arrow_downward' }}</mat-icon></p>
     <div class="search-input">
       <p>by word or sentance</p>
       <input type="text">

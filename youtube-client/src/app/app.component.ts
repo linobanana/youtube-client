@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public dateSort: boolean;
+  public countSort: boolean;
+
   public sortActive: boolean = false;
   public hasResponse: boolean = false;
 
@@ -14,6 +17,14 @@ export class AppComponent {
   }
 
   public showPanel(isActive: boolean): void {
-    isActive ? this.sortActive = true : this.sortActive = false;
+    isActive && this.hasResponse ? this.sortActive = true : this.sortActive = false;
+  }
+
+  public dateSorting(...args: boolean[]): void {
+    this.dateSort = args[0];
+  }
+
+  public countSorting(...args: boolean[]): void {
+    this.countSort = args[0];
   }
 }
