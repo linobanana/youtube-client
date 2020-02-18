@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search-field.component.css']
 })
 export class SearchFieldComponent implements OnInit {
-  @Output() public submit = new EventEmitter<boolean>();
+  @Output() public submit: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 

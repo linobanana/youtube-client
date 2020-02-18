@@ -8,6 +8,7 @@ import { Component, Output } from '@angular/core';
 export class AppComponent {
   public dateSort: boolean;
   public countSort: boolean;
+  public searchText: string;
 
   public sortActive: boolean = false;
   public hasResponse: boolean = false;
@@ -26,5 +27,9 @@ export class AppComponent {
 
   public countSorting(...args: boolean[]): void {
     this.countSort = args[0];
+  }
+
+  public textSearch(...args: string[]): void {
+    this.searchText = args[0];
   }
 }

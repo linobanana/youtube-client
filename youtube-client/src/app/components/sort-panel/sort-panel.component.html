@@ -5,7 +5,10 @@
     <p class="field"><a href="" (click)="countSort($event)">count of views</a><mat-icon *ngIf="countSortCounter > 0">{{ countSortCounter % 2 === 0 ? 'arrow_upward' : 'arrow_downward' }}</mat-icon></p>
     <div class="search-input">
       <p>by word or sentance</p>
-      <input type="text">
+      <form>
+        <input type="text" name="textField" [(ngModel)]="userInput" (keyup)="onSearchSubmit($event)">
+      </form>
+      <mat-icon *ngIf="userInput" (click)="clearField($event)">clear</mat-icon>
     </div>
   </div>
 </div>

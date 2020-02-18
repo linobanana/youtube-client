@@ -1,8 +1,8 @@
 import { youtubeResponse } from './../../mocks/youtube-response';
 import { SearchItem } from './../../models/search-item.model';
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-const videos: SearchItem[] = youtubeResponse.items;
+const videos: Array<SearchItem> = youtubeResponse.items;
 
 @Component({
   selector: 'app-search-results',
@@ -12,6 +12,7 @@ const videos: SearchItem[] = youtubeResponse.items;
 export class SearchResultsComponent implements OnInit {
   @Input() public dateSort: boolean;
   @Input() public countSort: boolean;
+  @Input() public searchText: string;
 
   public videos: SearchItem[];
 

@@ -1,6 +1,6 @@
 <div class="wrapper">
-  <app-search-item *ngFor="let video of (videos | dateSortPipe: dateSort | countOfViews: countSort)"
-    [video]="video"
-  ></app-search-item>
+  <app-search-item *ngFor="let video of (videos | wordFiltering: searchText | dateSortPipe: dateSort | countOfViews: countSort)"
+  [video]="video">
+  </app-search-item>
 </div>
 

@@ -37,6 +37,15 @@
   align-self: flex-end;
 }
 
+.search-input > mat-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  color: cornflowerblue;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
   .wrapper {
     width: 60%;

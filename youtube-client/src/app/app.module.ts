@@ -13,6 +13,8 @@ import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
 import { BorderColorDirective } from './directives/border-color.directive';
 import { DateSortPipe } from './pipes/date-sort.pipe';
 import { CountOfViewsPipe } from './pipes/count-of-views.pipe';
+import { FormsModule } from '@angular/forms';
+import { WordFilteringPipe } from './pipes/word-filtering.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CountOfViewsPipe } from './pipes/count-of-views.pipe';
     NumberConversionPipe,
     BorderColorDirective,
     DateSortPipe,
-    CountOfViewsPipe
+    CountOfViewsPipe,
+    WordFilteringPipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { CountOfViewsPipe } from './pipes/count-of-views.pipe';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
