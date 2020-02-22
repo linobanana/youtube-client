@@ -6,7 +6,7 @@
     <div class="search-input">
       <p>by word or sentance</p>
       <form>
-        <input type="text" name="textField" [(ngModel)]="userInput" (keyup)="onSearchSubmit($event)">
+        <input type="text" name="textField" [(ngModel)]="userInput" (keyup)="onSearchSubmit()">
       </form>
       <mat-icon *ngIf="userInput" (click)="clearField($event)">clear</mat-icon>
     </div>
