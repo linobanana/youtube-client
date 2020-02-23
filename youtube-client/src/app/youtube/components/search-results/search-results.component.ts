@@ -1,4 +1,4 @@
-import { youtubeResponse } from './../../mocks/youtube-response';
+import { youtubeResponse } from './../../../shared/mocks/youtube-response';
 import { SearchItem } from './../../models/search-item.model';
 import { Component, OnInit, Input } from '@angular/core';
 
