@@ -1,11 +1,8 @@
-.card {
-  width: 200px;
-  padding: 20px;
-}
-
 .statistics {
   display: flex;
   justify-content: space-between;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
 .statistics > div {
@@ -22,18 +19,4 @@
 
 .statistics > div > p {
   font-size: 12px;
-}
-
-.video-name {
-  margin-top: 15px;
-  text-align: center;
-}
-
-.more-btn {
-  display: flex;
-  justify-content: center;
-}
-
-.card-content {
-  min-height: 91px;
 }

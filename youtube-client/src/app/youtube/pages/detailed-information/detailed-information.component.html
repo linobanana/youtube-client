@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <mat-card class="card" [appBorderColor]="video.snippet.publishedAt">
+    <img mat-card-image class="video-img" src="{{ video.snippet.thumbnails.maxres.url }}" alt="Video thumbnail">
+    <div class="content">
+      <mat-card-title>
+        <h6 class="video-name">{{ video.snippet.title | slice:0:70 }}</h6>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <p class="date">{{ video.snippet.publishedAt | date:'fullDate' }}</p>
+      </mat-card-subtitle>
+      <mat-card-content class="card-content">
+        <div class="description">
+          <h4>Description:</h4>
+          <p *ngIf="shortDesc" class="shortDesc">{{ video.snippet.description | slice:0:250 }}
+            <a href="" (click)="showFullDescription($event)">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </a>
+          </p>
+          <mat-card *ngIf="!shortDesc" class="fullDesc">
+            <p>{{ video.snippet.description }}
+              <a href="" (click)="hideFullDescription($event)">
+                <mat-icon>arrow_drop_up</mat-icon>
+              </a>
+            </p>
+          </mat-card>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <app-statistics [statistics]="video.statistics"></app-statistics>
+      </mat-card-footer>
+    </div>
+  </mat-card>
+
+  <button mat-raised-button class="btn"><mat-icon>keyboard_arrow_left</mat-icon>Back</button>
+</div>

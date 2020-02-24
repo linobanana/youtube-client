@@ -1,0 +1,18 @@
+<div class="statistics">
+  <div class="statistics-views">
+    <mat-icon>remove_red_eye</mat-icon>
+    <p>{{ statistics.viewCount | numberConversionPipe }}</p>
+  </div>
+  <div class="statistics-likes">
+    <mat-icon>thumb_up</mat-icon>
+    <p>{{ statistics.likeCount | numberConversionPipe }}</p>
+  </div>
+  <div class="statistics-dislikes">
+    <mat-icon>thumb_down</mat-icon>
+    <p>{{ statistics.dislikeCount | numberConversionPipe }}</p>
+  </div>
+  <div class="statistics-comments">
+    <mat-icon>insert_comment</mat-icon>
+    <p>{{ statistics.commentCount | numberConversionPipe }}</p>
+  </div>
+</div>

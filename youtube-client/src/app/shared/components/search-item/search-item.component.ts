@@ -1,4 +1,4 @@
-import { SearchItem } from './../../models/search-item.model';
+import { SearchItem } from '../../../youtube/models/search-item.model';
 import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
