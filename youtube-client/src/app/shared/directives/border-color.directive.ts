@@ -6,7 +6,7 @@ import { Directive, ElementRef, Renderer2, Input, OnInit } from '@angular/core';
 export class BorderColorDirective implements OnInit {
   @Input('appBorderColor') public date: string;
 
-  constructor(private elementRef: ElementRef, private renderer2: Renderer2) { }
+  constructor(private _elementRef: ElementRef, private _renderer2: Renderer2) { }
 
   private setBorderColor(date: string): void {
     let color: string;
@@ -23,7 +23,7 @@ export class BorderColorDirective implements OnInit {
     } else {
       color = 'red';
     }
-    this.renderer2.setStyle(this.elementRef.nativeElement, 'border-bottom', `3px solid ${color}`);
+    this._renderer2.setStyle(this._elementRef.nativeElement, 'border-bottom', `3px solid ${color}`);
   }
 
   public ngOnInit(): void {

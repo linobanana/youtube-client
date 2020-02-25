@@ -1,17 +1,21 @@
+import { YoutubeService } from './../../../youtube/services/youtube.service';
+import { Router } from '@angular/router';
 import { SearchItem } from '../../../youtube/models/search-item.model';
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-search-item',
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.css']
 })
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent {
   @Input() public video: SearchItem;
 
-  constructor() { }
+  constructor(private _youtubeService: YoutubeService, private _router: Router) { }
 
-  public ngOnInit(): void {
+  public setVideoId(id: string): void {
+    this._youtubeService.videoId = id;
+    this._router.navigate(['video', id]);
   }
 
 }

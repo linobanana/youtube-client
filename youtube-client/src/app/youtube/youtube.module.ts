@@ -1,3 +1,4 @@
+import { DetailedInformationComponent } from './pages/detailed-information/detailed-information.component';
 import { SharedModule } from './../shared/shared.module';
 import { WordFilteringPipe } from './pipes/word-filtering.pipe';
 import { DateSortPipe } from './pipes/date-sort.pipe';
@@ -9,8 +10,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { YoutubeService } from './services/youtube.service';
-import { DetailedInformationComponent } from './pages/detailed-information/detailed-information.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,26 +21,22 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     CountOfViewsPipe,
     DateSortPipe,
     WordFilteringPipe,
-    DetailedInformationComponent,
     MainPageComponent,
     DateSortPipe,
     WordFilteringPipe,
-    CountOfViewsPipe
+    CountOfViewsPipe,
+    DetailedInformationComponent
   ],
   imports: [
     CommonModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
-  exports: [
-    NotFoundComponent,
-    SearchResultsComponent,
-    SortPanelComponent,
-    MainPageComponent,
-    DetailedInformationComponent
-  ],
-  providers: [YoutubeService]
+  providers: [
+    YoutubeService
+  ]
 })
 export class YoutubeModule { }

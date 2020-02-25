@@ -1,32 +1,38 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { YoutubeService } from './../../../youtube/services/youtube.service';
+import { LoginService } from 'src/app/auth/services/login.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  @Output() public showResults: EventEmitter<boolean> = new EventEmitter();
-  @Output() public showPanel: EventEmitter<boolean> = new EventEmitter();
+export class HeaderComponent {
 
-  public isSortPanelActive: boolean = false;
+  constructor(
+    private _router: Router,
+    public loginService: LoginService,
+    private _youtubeService: YoutubeService
+  ) { }
 
-  constructor() { }
-
-  public ngOnInit(): void {
+  public goHome(): void {
+    this._router.navigateByUrl('/home');
   }
 
-  public onSubmit(action: boolean): void {
-    this.showResults.emit(action);
+  public logOut(): void {
+    this.loginService.logOut();
   }
 
-  public activateSortPanel(): void {
-    this.isSortPanelActive ? this.isSortPanelActive = false : this.isSortPanelActive = true;
-    if (this.isSortPanelActive) {
-      this.showPanel.emit(true);
-    } else {
-      this.showPanel.emit(false);
+  public onSubmit(): void {
+    if (this._router.url !== '/auth') {
+      this._youtubeService.showResults();
     }
   }
 
+  public activateSortPanel(): void {
+    if (this._router.url !== '/auth') {
+      this._youtubeService.toggleSortPanelState();
+    }
+  }
 }

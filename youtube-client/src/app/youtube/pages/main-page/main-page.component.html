@@ -1,6 +1,7 @@
-<app-sort-panel></app-sort-panel>
-<div class="wrapper">
-  <app-search-item *ngFor="let video of (videos | wordFiltering: searchText | dateSortPipe: dateSort | countOfViews: countSort)"
-  [video]="video">
-  </app-search-item>
-</div>
+<app-sort-panel *ngIf="this.youtubeService.sortActive"></app-sort-panel>
+<app-search-results
+  *ngIf="this.youtubeService.hasResponse"
+  [dateSort]="this.youtubeService.dateSort"
+  [countSort]="this.youtubeService.countSort"
+  [searchText]="this.youtubeService.searchText"
+></app-search-results>

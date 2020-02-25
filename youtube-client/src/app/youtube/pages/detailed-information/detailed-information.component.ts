@@ -1,6 +1,7 @@
-import { youtubeResponse } from './../../../shared/mocks/youtube-response';
-import { Component, OnInit, Input } from '@angular/core';
+import { YoutubeService } from '../../services/youtube.service';
+import { Component, OnInit } from '@angular/core';
 import { SearchItem } from '../../models/search-item.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detailed-information',
@@ -8,14 +9,14 @@ import { SearchItem } from '../../models/search-item.model';
   styleUrls: ['./detailed-information.component.css']
 })
 export class DetailedInformationComponent implements OnInit {
-  // @Input() public video: SearchItem;
-
-  public video: SearchItem = youtubeResponse.items[0];
+  public video: SearchItem;
   public shortDesc: boolean = true;
 
-  constructor() { }
+  constructor(private _youtubeService: YoutubeService, private _location: Location) { }
 
   public ngOnInit(): void {
+    this._youtubeService.findVideo();
+    this.video = this._youtubeService.video;
   }
 
   public showFullDescription($event: MouseEvent): void {
@@ -26,6 +27,10 @@ export class DetailedInformationComponent implements OnInit {
   public hideFullDescription($event: MouseEvent): void {
     $event.preventDefault();
     this.shortDesc = true;
+  }
+
+  public back(): void {
+    this._location.back();
   }
 
 }

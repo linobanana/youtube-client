@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { YoutubeService } from './../../services/youtube.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sort-panel',
@@ -6,15 +7,12 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./sort-panel.component.css']
 })
 export class SortPanelComponent implements OnInit {
-  @Output() public dateSorting: EventEmitter<boolean> = new EventEmitter();
-  @Output() public countSorting: EventEmitter<boolean> = new EventEmitter();
-  @Output() public searchText: EventEmitter<string> = new EventEmitter();
   @Input() public userInput: string;
 
   public dateSortCounter: number = 0;
   public countSortCounter: number = 0;
 
-  constructor() { }
+  constructor(private _youtubeService: YoutubeService) { }
 
   public ngOnInit(): void {
   }
@@ -24,9 +22,9 @@ export class SortPanelComponent implements OnInit {
     this.dateSortCounter++;
     this.countSortCounter = 0;
     if (this.dateSortCounter % 2 !== 0) {
-      this.dateSorting.emit(true);
+      this._youtubeService.dateSort = true;
     } else {
-      this.dateSorting.emit(false);
+      this._youtubeService.dateSort = false;
     }
   }
 
@@ -35,26 +33,26 @@ export class SortPanelComponent implements OnInit {
     this.countSortCounter++;
     this.dateSortCounter = 0;
     if (this.countSortCounter % 2 !== 0) {
-      this.countSorting.emit(true);
+      this._youtubeService.countSort = true;
     } else {
-      this.countSorting.emit(false);
+      this._youtubeService.countSort = false;
     }
   }
 
   public onSearchSubmit(): void {
     this.dateSortCounter = 0;
     this.countSortCounter = 0;
-    this.dateSorting.emit(false);
-    this.countSorting.emit(false);
-    this.searchText.emit(this.userInput);
+    this._youtubeService.dateSort = false;
+    this._youtubeService.countSort = false;
+    this._youtubeService.searchText = this.userInput;
   }
 
   public clearField($event: MouseEvent): void {
     this.userInput = '';
     this.dateSortCounter = 0;
     this.countSortCounter = 0;
-    this.dateSorting.emit(false);
-    this.countSorting.emit(false);
-    this.searchText.emit(this.userInput);
+    this._youtubeService.dateSort = false;
+    this._youtubeService.countSort = false;
+    this._youtubeService.searchText = this.userInput;
   }
 }

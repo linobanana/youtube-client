@@ -1,4 +1,4 @@
-import { GlobalService } from './services/global.service';
+import { LoginService } from 'src/app/auth/services/login.service';
 import { HeaderComponent } from './components/header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatInputModule
   ],
-  exports: [HeaderComponent, SearchFieldComponent],
-  providers: [GlobalService]
+  exports: [
+    HeaderComponent
+  ],
+  providers: [LoginService]
 })
 export class CoreModule { }

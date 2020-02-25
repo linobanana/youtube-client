@@ -1,6 +1,7 @@
+import { AuthRoutingModule } from './auth/auth-routing.module';
+// import { YoutubeRoutingModule } from './youtube/youtube-routing.module';
 import { YoutubeModule } from './youtube/youtube.module';
 import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,10 +19,10 @@ import { MatCardModule } from '@angular/material';
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
-    AuthModule,
     SharedModule,
     YoutubeModule,
-    MatCardModule
+    MatCardModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

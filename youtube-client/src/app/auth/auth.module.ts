@@ -1,3 +1,6 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SharedModule } from './../shared/shared.module';
+import { AuthRoutingModule } from './auth-routing.module';
 import { SnackBarComponent } from './../shared/components/snack-bar/snack-bar.component';
 import { LoginService } from './services/login.service';
 import {
@@ -12,17 +15,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
-  declarations: [LoginFormComponent, LoginPageComponent],
+  declarations: [
+    LoginFormComponent,
+    LoginPageComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AuthRoutingModule,
+    MatSnackBarModule,
+    SharedModule
   ],
-  exports: [LoginFormComponent, LoginPageComponent],
   providers: [LoginService],
-  entryComponents: [SnackBarComponent]
+  entryComponents: [
+    SnackBarComponent
+  ]
 })
 export class AuthModule { }

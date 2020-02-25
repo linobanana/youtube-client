@@ -5,6 +5,6 @@
     <h3 class="video-name">{{ video.snippet.title | slice:0:70 }}</h3>
   </mat-card-content>
   <mat-card-actions class="more-btn">
-    <button mat-raised-button color="warn">more</button>
+    <button mat-raised-button color="warn" (click)="setVideoId(video.id)">more</button>
   </mat-card-actions>
 </mat-card>

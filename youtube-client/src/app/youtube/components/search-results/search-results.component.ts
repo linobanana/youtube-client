@@ -1,8 +1,6 @@
-import { youtubeResponse } from './../../../shared/mocks/youtube-response';
+import { YoutubeService } from './../../services/youtube.service';
 import { SearchItem } from './../../models/search-item.model';
 import { Component, OnInit, Input } from '@angular/core';
-
-const videos: Array<SearchItem> = youtubeResponse.items;
 
 @Component({
   selector: 'app-search-results',
@@ -16,10 +14,10 @@ export class SearchResultsComponent implements OnInit {
 
   public videos: SearchItem[];
 
-  constructor() { }
+  constructor(private _youtubeService: YoutubeService) { }
 
   public ngOnInit(): void {
-    this.videos = videos;
+    this.videos = this._youtubeService.videos;
   }
 
 }
