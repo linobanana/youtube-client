@@ -10,6 +10,11 @@ import { MatIconModule, MatInputModule, MatButtonModule, MatCardModule } from '@
 import { HeaderComponent } from './components/header/header.component';
 import { SearchFieldComponent } from './components/header/search-field/search-field.component';
 import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
+import { BorderColorDirective } from './directives/border-color.directive';
+import { DateSortPipe } from './pipes/date-sort.pipe';
+import { CountOfViewsPipe } from './pipes/count-of-views.pipe';
+import { FormsModule } from '@angular/forms';
+import { WordFilteringPipe } from './pipes/word-filtering.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,11 @@ import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
     SortPanelComponent,
     SearchResultsComponent,
     SearchItemComponent,
-    NumberConversionPipe
+    NumberConversionPipe,
+    BorderColorDirective,
+    DateSortPipe,
+    CountOfViewsPipe,
+    WordFilteringPipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +36,8 @@ import { NumberConversionPipe } from './pipes/number-conversion-pipe.pipe';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

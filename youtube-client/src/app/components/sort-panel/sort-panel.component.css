@@ -14,6 +14,19 @@
   justify-content: space-between;
 }
 
+.field {
+  display: flex;
+  align-items: center;
+}
+
+.field > mat-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  color: cornflowerblue;
+  margin-left: 5px;
+}
+
 .search-input {
   display: flex;
   color: #0016ee;
@@ -22,6 +35,15 @@
 .search-input > p {
   margin-right: 5px;
   align-self: flex-end;
+}
+
+.search-input > mat-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  color: cornflowerblue;
+  margin-left: 3px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { SearchResponse } from './../models/search-response.model';
 
 export const youtubeResponse: SearchResponse = {
@@ -751,4 +752,4 @@ export const youtubeResponse: SearchResponse = {
       }
     }
   ]
-}
+};

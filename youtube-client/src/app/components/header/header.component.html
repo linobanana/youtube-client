@@ -2,8 +2,8 @@
   <div class="wrapper">
     <mat-icon class="logo">play_circle_filled</mat-icon>
     <div class="search-block">
-      <app-search-field></app-search-field>
-      <button mat-raised-button class="sort-btn">
+      <app-search-field (submit)="onSubmit(true)"></app-search-field>
+      <button mat-raised-button class="sort-btn" (click)="activateSortPanel()">
         <mat-icon>filter_list</mat-icon>
       </button>
     </div>
