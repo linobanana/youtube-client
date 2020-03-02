@@ -11,3 +11,7 @@ app-search-item {
   margin: 20px;
   display: flex;
 }
+
+:host {
+  padding-bottom: 40px;
+}

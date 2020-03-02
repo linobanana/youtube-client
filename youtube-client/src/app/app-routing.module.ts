@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: MainPageComponent, canActivate: [AuthGuard]},
   { path: 'video/:id', component: DetailedInformationComponent},
-  { path: '**', component: NotFoundComponent },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' },
 ];
 
 @NgModule({

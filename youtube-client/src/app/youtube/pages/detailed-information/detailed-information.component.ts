@@ -1,3 +1,6 @@
+import { SearchResponse } from './../../models/search-response.model';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { YoutubeService } from '../../services/youtube.service';
 import { Component, OnInit } from '@angular/core';
 import { SearchItem } from '../../models/search-item.model';
@@ -12,11 +15,21 @@ export class DetailedInformationComponent implements OnInit {
   public video: SearchItem;
   public shortDesc: boolean = true;
 
-  constructor(private _youtubeService: YoutubeService, private _location: Location) { }
+  constructor(
+    private _youtubeService: YoutubeService,
+    private _location: Location,
+    private _httpClient: HttpClient,
+    private _router: Router
+  ) {}
 
   public ngOnInit(): void {
-    this._youtubeService.findVideo();
-    this.video = this._youtubeService.video;
+    if (this._youtubeService.videoId) {
+      this._httpClient.get(`videos${this._youtubeService.videoId}`).subscribe(
+        (res: SearchResponse) => this.video = res.items[0]
+      );
+    } else {
+      this._router.navigateByUrl('404');
+    }
   }
 
   public showFullDescription($event: MouseEvent): void {

@@ -1,6 +1,6 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="video">
   <mat-card class="card" [appBorderColor]="video.snippet.publishedAt">
-    <img mat-card-image class="video-img" src="{{ video.snippet.thumbnails.maxres.url }}" alt="Video thumbnail">
+    <img mat-card-image class="video-img" src="{{ video.snippet.thumbnails.high.url }}" alt="Video thumbnail">
     <div class="content">
       <mat-card-title>
         <h6 class="video-name">{{ video.snippet.title | slice:0:70 }}</h6>

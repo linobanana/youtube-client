@@ -1,8 +1,18 @@
 <div class="wrapper">
   <form class="search-form">
     <mat-form-field class="search-input">
-      <input matInput placeholder="Search">
+      <input type="text"
+             placeholder="Search"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto"
+             (keyup)="onKeyUp($event)">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
-    <button mat-raised-button type="submit" color="primary" class="submit-btn">Submit</button>
   </form>
 </div>

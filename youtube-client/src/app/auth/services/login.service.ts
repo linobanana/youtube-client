@@ -16,7 +16,7 @@ export class LoginService {
     private _router: Router,
     private _youtubeService: YoutubeService,
     private _snackBar: MatSnackBar
-  ) { }
+  ) {}
 
   private setAccessToken(access: boolean): void {
     if (access) {

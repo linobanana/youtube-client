@@ -1,6 +1,6 @@
+import { SearchItemWithId } from './../../../youtube/models/search-item.model';
 import { YoutubeService } from './../../../youtube/services/youtube.service';
 import { Router } from '@angular/router';
-import { SearchItem } from '../../../youtube/models/search-item.model';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./search-item.component.css']
 })
 export class SearchItemComponent {
-  @Input() public video: SearchItem;
+  @Input() public video: SearchItemWithId;
 
   constructor(private _youtubeService: YoutubeService, private _router: Router) { }
 

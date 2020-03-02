@@ -5,3 +5,4 @@
   [countSort]="this.youtubeService.countSort"
   [searchText]="this.youtubeService.searchText"
 ></app-search-results>
+<button mat-raised-button class="load-btn" color="primary" *ngIf="this.youtubeService.hasResponse" (click)="onClick()">Load more</button>

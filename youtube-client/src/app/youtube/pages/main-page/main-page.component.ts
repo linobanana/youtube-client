@@ -10,4 +10,9 @@ export class MainPageComponent {
 
   constructor(public youtubeService: YoutubeService) { }
 
+  public onClick(): void {
+    this.youtubeService
+    .searchResults(`${this.youtubeService.userInput}&pageToken=${this.youtubeService.nextPageToken}`);
+  }
+
 }

@@ -14,19 +14,23 @@ export class HeaderComponent {
     private _router: Router,
     public loginService: LoginService,
     private _youtubeService: YoutubeService
-  ) { }
+  ) {}
 
   public goHome(): void {
     this._router.navigateByUrl('/home');
   }
 
   public logOut(): void {
-    this.loginService.logOut();
+    if (this.loginService.isAuthorized) {
+      this.loginService.logOut();
+    } else {
+      this._router.navigateByUrl('auth');
+    }
   }
 
   public onSubmit(): void {
     if (this._router.url !== '/auth') {
-      this._youtubeService.showResults();
+      this._youtubeService.searchResults();
     }
   }
 

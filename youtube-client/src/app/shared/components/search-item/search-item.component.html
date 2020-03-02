@@ -1,5 +1,5 @@
 <mat-card class="card" [appBorderColor]="video.snippet.publishedAt">
-<img mat-card-image src="{{ video.snippet.thumbnails.maxres.url }}" alt="Video thumbnail">
+<img mat-card-image src="{{ video.snippet.thumbnails.high.url }}" alt="Video thumbnail">
   <mat-card-content class="card-content">
     <app-statistics [statistics]="video.statistics"></app-statistics>
     <h3 class="video-name">{{ video.snippet.title | slice:0:70 }}</h3>
