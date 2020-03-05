@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="wrapper">
+    <mat-icon class="logo" (click)="goHome()">play_circle_filled</mat-icon>
+    <div class="search-block">
+      <app-search-field (submit)="onSubmit()"></app-search-field>
+      <button mat-raised-button class="sort-btn" (click)="activateSortPanel()">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </div>
+    <div class="login">
+      <p class="login-name">Your Name</p>
+      <button mat-raised-button class="login-btn">
+        <mat-icon class="login-icon">face</mat-icon>
+      </button>
+      <button mat-button *ngIf="this.loginService.isAuthorized" class="logout-btn" (click)="logOut()">
+        <mat-icon class="logout-icon">exit_to_app</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

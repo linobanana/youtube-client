@@ -1,0 +1,19 @@
+.card {
+  width: 200px;
+  padding: 20px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.4), 0 1px 1px 0 rgba(0,0,0,.5), 0 1px 9px -1px rgba(0,0,0,0.6);
+}
+
+.video-name {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.more-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.card-content {
+  min-height: 91px;
+}

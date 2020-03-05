@@ -1,0 +1,82 @@
+.container {
+  background-color: rgb(235, 238, 243);
+  height: 80px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.wrapper {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 50px;
+  width: 50px;
+  height: 50px;
+  color: #0D2C54;
+  cursor: pointer;
+}
+
+.search-block {
+  display: flex;
+  align-items: baseline;
+}
+
+app-search-field {
+  position: relative;
+  margin-right: 15px;
+}
+
+.sort-btn {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+}
+
+.login-name {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.login-btn {
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  padding: 0;
+}
+
+.login-icon {
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0D2C54;
+}
+
+.logout-btn {
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  padding: 0;
+  margin-left: 15px;
+}
+
+.logout-icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

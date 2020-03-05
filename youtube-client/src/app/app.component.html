@@ -1,3 +1,2 @@
-<app-header (showResults)="showResults()" (showPanel)="showPanel($event)"></app-header>
-<app-sort-panel *ngIf="sortActive" (dateSorting)="dateSorting($event)" (countSorting)="countSorting($event)" (searchText)="textSearch($event)"></app-sort-panel>
-<app-search-results *ngIf="hasResponse" [dateSort]="dateSort" [countSort]="countSort" [searchText]="searchText"></app-search-results>
+<app-header></app-header>
+<router-outlet></router-outlet>
