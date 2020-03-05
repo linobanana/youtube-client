@@ -1,0 +1,34 @@
+.container {
+  width: 60vw;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto 0 auto;
+}
+
+.err404 {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.err-desc {
+  margin-left: 50px;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: grey;
+  max-width: 476px;
+  padding-bottom: 25px;
+  border-bottom: 5px solid #3f51b5;
+}
+
+.btn {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-btn {
+  width: 150px;
+}

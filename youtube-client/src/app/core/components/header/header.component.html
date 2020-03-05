@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="wrapper">
+    <mat-icon class="logo" (click)="goHome()">play_circle_filled</mat-icon>
+    <div class="search-block">
+      <app-search-field (submit)="onSubmit()" [auth]="loginService.isAuthorized"></app-search-field>
+      <button mat-raised-button class="sort-btn" (click)="activateSortPanel()">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </div>
+    <div class="login">
+      <p class="login-name">{{ loginService.isAuthorized ? 'Log out' : 'Log in'}}</p>
+      <button mat-raised-button class="login-btn" (click)="logOut()">
+        <mat-icon class="login-icon">exit_to_app</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

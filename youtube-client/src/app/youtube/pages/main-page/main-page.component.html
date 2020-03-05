@@ -1,0 +1,8 @@
+<app-sort-panel *ngIf="this.youtubeService.sortActive"></app-sort-panel>
+<app-search-results
+  *ngIf="this.youtubeService.hasResponse"
+  [dateSort]="this.youtubeService.dateSort"
+  [countSort]="this.youtubeService.countSort"
+  [searchText]="this.youtubeService.searchText"
+></app-search-results>
+<button mat-raised-button class="load-btn" color="primary" *ngIf="this.youtubeService.hasResponse" (click)="onClick()">Load more</button>
